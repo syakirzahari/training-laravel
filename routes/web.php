@@ -22,3 +22,11 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('students', 'StudentController');
+
+Route::resource('subjects', 'SubjectController');
+
+Route::resource('halls', 'HallController');
+
+Route::resource('timetables', 'TimetableController');
+
+Route::resource('groups', 'GroupController');

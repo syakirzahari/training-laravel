@@ -100,19 +100,33 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('students.index') }}" class="nav-link">
+                <a href="{{ route('subjects.index') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>List of Subjects</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('students.index') }}" class="nav-link">
+                <a href="{{ route('halls.index') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>List of Lecture Halls</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="{{ route('groups.index') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>List of Groups</p>
+                </a>
+              </li>
             </ul>
           </li>
+          <li class="nav-item">
+            <a href="{{ route('timetables.index') }}" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                User Timetable
+              </p>
+            </a>
+          </li>   
           <li class="nav-item">
             <a href="{{ route('logout') }}" class="nav-link"  onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

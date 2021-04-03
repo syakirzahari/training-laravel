@@ -33,8 +33,14 @@
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Detail:</strong>
-                    <textarea class="form-control" name="email" placeholder="Email">{{ $student->email }}</textarea>
+                    <strong>Email:</strong>
+                    <input type="type" class="form-control" name="email" value="{{ $student->email }}" placeholder="Email"></input>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Password:</strong>
+                    <input type="password" class="form-control" name="password" placeholder="Password"></input>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">

@@ -38,6 +38,7 @@ class StudentController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required',
+            'password' => 'required'
         ]);
 
         $request->password = Hash::make($request->password);
@@ -45,8 +46,8 @@ class StudentController extends Controller
   
         User::create($request->all());
    
-        return redirect()->route('products.index')
-                        ->with('success','Product created successfully.');
+        return redirect()->route('students.index')
+                        ->with('success','Student created successfully.');
     }
    
     /**
@@ -90,8 +91,8 @@ class StudentController extends Controller
   
         $student->update($request->all());
   
-        return redirect()->route('crud.index')
-                        ->with('success','Product updated successfully');
+        return redirect()->route('students.index')
+                        ->with('success','Student updated successfully');
     }
   
     /**
@@ -104,7 +105,7 @@ class StudentController extends Controller
     {
         $student->delete();
   
-        return redirect()->route('crud.index')
-                        ->with('success','Product deleted successfully');
+        return redirect()->route('students.index')
+                        ->with('success','Student deleted successfully');
     }
 }

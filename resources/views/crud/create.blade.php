@@ -24,16 +24,22 @@
     @csrf
   
      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="col-xs-6 col-sm-6 col-md-12">
             <div class="form-group">
                 <strong>Name:</strong>
                 <input type="text" name="name" class="form-control" placeholder="Name">
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="col-xs-6 col-sm-6 col-md-12">
             <div class="form-group">
-                <strong>Emails:</strong>
-                <textarea class="form-control" name="email" placeholder="Email"></textarea>
+                <strong>Email:</strong>
+                <input type="text" class="form-control" name="email" placeholder="Email">
+            </div>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-12">
+            <div class="form-group">
+                <strong>Password:</strong>
+                <input type="password" class="form-control" name="password" placeholder="Password">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
