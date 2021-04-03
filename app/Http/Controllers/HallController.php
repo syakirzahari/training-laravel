@@ -38,7 +38,14 @@ class HallController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+        ]);
+  
+        Hall::create($request->all());
+   
+        return redirect()->route('halls.index')
+                        ->with('success','Hall created successfully.');
     }
 
     /**
@@ -49,7 +56,8 @@ class HallController extends Controller
      */
     public function show(Hall $hall)
     {
-        //
+        return view('halls.show',compact('hall'));
+
     }
 
     /**
@@ -60,7 +68,7 @@ class HallController extends Controller
      */
     public function edit(Hall $hall)
     {
-        //
+        return view('halls.edit',compact('hall'));
     }
 
     /**
@@ -72,7 +80,14 @@ class HallController extends Controller
      */
     public function update(Request $request, Hall $hall)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+        ]);
+  
+        $hall->update($request->all());
+  
+        return redirect()->route('halls.index')
+                        ->with('success','Hall updated successfully');
     }
 
     /**
@@ -83,6 +98,9 @@ class HallController extends Controller
      */
     public function destroy(Hall $hall)
     {
-        //
+        $hall->delete();
+
+       return redirect()->route('halls.index')
+       ->with('success','Hall deleted successfully');
     }
 }

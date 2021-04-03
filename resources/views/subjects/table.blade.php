@@ -26,7 +26,7 @@
         </tr>
         @foreach ($subject as $s)
         <tr>
-            <td>{{ ++$i }}</td>
+            <td>{{ $s->id }}</td>
             <td>{{ $s->subject_code }}</td>
             <td>{{ $s->name }}</td>
             <td>{{ $s->created_at }}</td>
@@ -46,7 +46,5 @@
         </tr>
         @endforeach
     </table>
-  
-    {!! $subject->links() !!}
-      
+        
 @endsection

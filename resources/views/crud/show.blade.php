@@ -21,6 +21,18 @@
                 {{ $student->email }}
             </div>
         </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+                <strong>Group:</strong>
+                {{ $student->group_id }}
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+                <strong>Joined On:</strong>
+                {{ $student->created_at }}
+            </div>
+        </div>
         <div class="pull-right">
                 <a class="btn btn-primary" href="{{ route('students.index') }}"> Back</a>
         </div>

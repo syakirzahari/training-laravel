@@ -20,8 +20,9 @@
         <tr>
             <th>No</th>
             <th>Name</th>
-            <th>Emails</th>
-            <th>Created_at</th>
+            <th>Email</th>
+            <th>Group</th>
+            <th>Joined On</th>
             <th width="280px">Action</th>
         </tr>
         @foreach ($students as $s)
@@ -29,6 +30,7 @@
             <td>{{ ++$i }}</td>
             <td>{{ $s->name }}</td>
             <td>{{ $s->email }}</td>
+            <td>{{ $s->group_id }}</td>
             <td>{{ $s->created_at }}</td>
             <td>
                 <form action="{{ route('students.destroy',$s->id) }}" method="POST">

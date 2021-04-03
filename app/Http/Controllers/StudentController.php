@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Group;
 use Hash;
 
 class StudentController extends Controller
@@ -24,7 +25,11 @@ class StudentController extends Controller
      */
     public function create()
     {
-        return view('crud.create');
+        $groups = Group::pluck('name', 'id');
+        $selectedID = 2;
+
+
+        return view('crud.create', compact('groups'));
     }
   
     /**
@@ -69,7 +74,9 @@ class StudentController extends Controller
      */
     public function edit(User $student)
     {
-        return view('crud.edit',compact('student'));
+        $groups = Group::pluck('name', 'id');
+
+        return view('crud.edit',compact('student', 'groups'));
     }
   
     /**

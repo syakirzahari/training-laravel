@@ -43,6 +43,15 @@
                     <input type="password" class="form-control" name="password" placeholder="Password"></input>
                 </div>
             </div>
+            <div class="col-xs-6 col-sm-6 col-md-12">
+                <select class="form-control">
+                    <option value="">Choose Group</option>
+                    @foreach ($groups as $id => $name)
+                        <option
+                            value="{{$id}}" {{ (isset($student['group_id']) && $student['group_id'] == $id) ? ' selected' : '' }}>{{$name}}</option>
+                    @endforeach
+                </select>
+            </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
               <button type="submit" class="btn btn-primary">Submit</button>
                 <a class="btn btn-primary" href="{{ route('students.index') }}"> Back</a>

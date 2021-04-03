@@ -26,12 +26,12 @@
         </tr>
         @foreach ($hall as $h)
         <tr>
-            <td>{{ ++$i }}</td>
+            <td>{{ $h->id }}</td>
             <td>{{ $h->name }}</td>
             <td>{{ $h->place }}</td>
             <td>{{ $h->created_at }}</td>
             <td>
-                <form action="{{ route('halls.destroy',$s->id) }}" method="POST">
+                <form action="{{ route('halls.destroy',$h->id) }}" method="POST">
    
                     <a class="btn btn-info" href="{{ route('halls.show',$h->id) }}">Show</a>
     

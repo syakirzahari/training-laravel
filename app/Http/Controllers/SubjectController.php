@@ -14,10 +14,9 @@ class SubjectController extends Controller
      */
     public function index()
     {
-        $subject = Subject::latest()->paginate(10);
+        $subject = Subject::all();
   
-        return view('subjects.index',compact('subject'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('subjects.index',compact('subject'));
     }
 
     /**
