@@ -29,9 +29,10 @@
         @foreach ($table as $t)
         <tr>
             <td>{{ $t->id }}</td>
-            <td>{{ $t->day_id }}</td>
-            <td>{{ $t->subject_id}}</td>
-            <td>{{ $t->hall_id }}</td>
+            <td>{{ $t->days->name }}</td>
+            <td>{{ $t->subjects->subject_code }} - {{ $t->subjects->name }}</td>
+            <td>{{ $t->halls->name }} <br>
+            {{ $t->halls->place }}</td>
             <td>{{ $t->time_from }}</td>
             <td>{{ $t->time_to }}</td>
             <td>

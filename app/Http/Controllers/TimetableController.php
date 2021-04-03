@@ -18,7 +18,11 @@ class TimetableController extends Controller
      */
     public function index()
     {
-        $table = Timetable::all();
+        $table = Timetable::with('days', 'subjects', 'halls')
+        ->where('student_id', auth()->user()->id)
+        ->orderBy('day_id', 'asc')
+        ->orderBy('time_from', 'asc')
+        ->get();
 
         return view('timetables.index',compact('table'));
 
