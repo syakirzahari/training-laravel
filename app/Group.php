@@ -9,6 +9,6 @@ class Group extends Model
     public $table = "ref_lecture_groups";
 
     protected $fillable = [
-        'name'
+        'name', 'part', 'total_student'
     ];
 }

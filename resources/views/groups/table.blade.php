@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>List of Group</h2>
+                <h2>List of Groups</h2>
             </div>
             <div class="pull-right">
                 <a class="btn btn-success" href="{{ route('groups.create') }}"> Add New Group</a>
@@ -21,14 +21,16 @@
             <th>No</th>
             <th>Name</th>
             <th>Part</th>
+            <th>Total Students</th>
             <th>Created At</th>
             <th width="280px">Action</th>
         </tr>
         @foreach ($group as $g)
         <tr>
-            <td>{{ ++$i }}</td>
+            <td>{{ $g->id }}</td>
             <td>{{ $g->name }}</td>
             <td>{{ $g->part }}</td>
+            <td>{{ $g->total_student }}</td>
             <td>{{ $g->created_at }}</td>
             <td>
                 <form action="{{ route('groups.destroy',$g->id) }}" method="POST">

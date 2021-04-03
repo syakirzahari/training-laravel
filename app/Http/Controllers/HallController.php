@@ -26,7 +26,8 @@ class HallController extends Controller
      */
     public function create()
     {
-        //
+        return view('halls.create');
+
     }
 
     /**
