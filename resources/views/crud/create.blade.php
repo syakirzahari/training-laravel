@@ -43,7 +43,7 @@
             </div>
         </div>
         <div class="col-xs-6 col-sm-6 col-md-12">
-            <select class="form-control">
+            <select class="form-control" name="group_id">
                 <option value="">Choose Group</option>
                 @foreach ($groups as $id => $name)
                     <option

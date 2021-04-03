@@ -25,6 +25,8 @@
         @method('PUT')
    
          <div class="row">
+            <input type="hidden" name="id" value="{{ $student->id }}"> <br/>
+
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Name:</strong>
@@ -44,7 +46,7 @@
                 </div>
             </div>
             <div class="col-xs-6 col-sm-6 col-md-12">
-                <select class="form-control">
+                <select class="form-control" name="group_id">
                     <option value="">Choose Group</option>
                     @foreach ($groups as $id => $name)
                         <option

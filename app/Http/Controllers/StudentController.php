@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Group;
 use Hash;
+use DB;
 
 class StudentController extends Controller
 {
@@ -26,7 +27,6 @@ class StudentController extends Controller
     public function create()
     {
         $groups = Group::pluck('name', 'id');
-        $selectedID = 2;
 
 
         return view('crud.create', compact('groups'));
@@ -46,10 +46,16 @@ class StudentController extends Controller
             'password' => 'required'
         ]);
 
-        $request->password = Hash::make($request->password);
+        DB::table('users')->insert([
+            'name' => $request->name,
+            'password' => $request->password,
+            'email' => $request->email,
+            'group_id' => $request->group_id,
+        ]);
 
+        // $request->password = Hash::make($request->password);
   
-        User::create($request->all());
+        // User::create($request->all());
    
         return redirect()->route('students.index')
                         ->with('success','Student created successfully.');
@@ -94,9 +100,16 @@ class StudentController extends Controller
             'password' => 'required',
         ]);
 
-        $student->password = Hash::make($request->password);
+        DB::table('users')->where('id',$request->id)->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'group_id' => $request->group_id
+        ]);
+
+        // $student->password = Hash::make($request->password);
   
-        $student->update($request->all());
+        // $student->update($request->all());
   
         return redirect()->route('students.index')
                         ->with('success','Student updated successfully');

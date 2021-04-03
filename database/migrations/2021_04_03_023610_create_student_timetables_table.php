@@ -19,8 +19,8 @@ class CreateStudentTimetablesTable extends Migration
             $table->unsignedInteger('day_id')->nullable();
             $table->unsignedInteger('subject_id')->nullable();
             $table->unsignedInteger('hall_id')->nullable();
-            $table->timestamp('time_from')->nullable();
-            $table->timestamp('time_to')->nullable();
+            $table->string('time_from')->nullable();
+            $table->string('time_to')->nullable();
             $table->timestamps();
         });
 
