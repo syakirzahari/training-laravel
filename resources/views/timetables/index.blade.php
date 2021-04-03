@@ -1,4 +1,4 @@
 @extends('layouts.template')
 @section('content')
-@include('subjects.table')
+@include('timetables.table')
 @endsection

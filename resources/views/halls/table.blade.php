@@ -2,10 +2,10 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>List of Students</h2>
+                <h2>List of Lecture Halls</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('students.create') }}"> Add New Student</a>
+                <a class="btn btn-success" href="{{ route('halls.create') }}"> Add New Hall</a>
             </div>
         </div>
     </div>
@@ -20,22 +20,22 @@
         <tr>
             <th>No</th>
             <th>Name</th>
-            <th>Emails</th>
-            <th>Created_at</th>
+            <th>Place</th>
+            <th>Created At</th>
             <th width="280px">Action</th>
         </tr>
-        @foreach ($students as $s)
+        @foreach ($hall as $h)
         <tr>
             <td>{{ ++$i }}</td>
-            <td>{{ $s->name }}</td>
-            <td>{{ $s->email }}</td>
-            <td>{{ $s->created_at }}</td>
+            <td>{{ $h->name }}</td>
+            <td>{{ $h->place }}</td>
+            <td>{{ $h->created_at }}</td>
             <td>
-                <form action="{{ route('students.destroy',$s->id) }}" method="POST">
+                <form action="{{ route('halls.destroy',$s->id) }}" method="POST">
    
-                    <a class="btn btn-info" href="{{ route('students.show',$s->id) }}">Show</a>
+                    <a class="btn btn-info" href="{{ route('halls.show',$h->id) }}">Show</a>
     
-                    <a class="btn btn-primary" href="{{ route('students.edit',$s->id) }}">Edit</a>
+                    <a class="btn btn-primary" href="{{ route('halls.edit',$h->id) }}">Edit</a>
    
                     @csrf
                     @method('DELETE')
@@ -47,6 +47,5 @@
         @endforeach
     </table>
   
-    {!! $students->links() !!}
       
 @endsection
