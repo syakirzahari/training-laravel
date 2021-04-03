@@ -128,6 +128,14 @@
             </a>
           </li>   
           <li class="nav-item">
+            <a href="{{ route('students.index') }}" class="nav-link">
+              <i class="nav-icon fas fa-user"></i>
+              <p>
+                Admin
+              </p>
+            </a>
+          </li>   
+          <li class="nav-item">
             <a href="{{ route('logout') }}" class="nav-link"  onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
               <i class="nav-icon fas fa-sign-out-alt"></i>

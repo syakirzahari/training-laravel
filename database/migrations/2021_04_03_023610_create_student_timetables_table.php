@@ -16,6 +16,7 @@ class CreateStudentTimetablesTable extends Migration
         Schema::create('student_timetables', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('student_id')->nullable();
+            $table->unsignedInteger('day_id')->nullable();
             $table->unsignedInteger('subject_id')->nullable();
             $table->unsignedInteger('hall_id')->nullable();
             $table->timestamp('time_from')->nullable();
@@ -27,6 +28,7 @@ class CreateStudentTimetablesTable extends Migration
             $table->foreign('student_id')->references('id')->on('users');
             $table->foreign('subject_id')->references('id')->on('subjects');
             $table->foreign('hall_id')->references('id')->on('halls');
+            $table->foreign('day_id')->references('id')->on('ref_days');
         });
     }
 

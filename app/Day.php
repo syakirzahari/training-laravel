@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Group extends Model
+class Day extends Model
 {
-    public $table = "ref_lecture_groups";
+    public $table = "ref_days";
 
     protected $fillable = [
         'name'
