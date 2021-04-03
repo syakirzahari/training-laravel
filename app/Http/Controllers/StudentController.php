@@ -52,8 +52,6 @@ class StudentController extends Controller
             'email' => $request->email,
             'group_id' => $request->group_id,
         ]);
-
-        // $request->password = Hash::make($request->password);
   
         // User::create($request->all());
    
@@ -106,8 +104,6 @@ class StudentController extends Controller
             'password' => Hash::make($request->password),
             'group_id' => $request->group_id
         ]);
-
-        // $student->password = Hash::make($request->password);
   
         // $student->update($request->all());
   
