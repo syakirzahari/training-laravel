@@ -8,4 +8,6 @@ Step to clone this project:
 6. Run composer update
 7. Run php artisan key:generate
 8. Configure .env based on your preferences.
-9. Run project.
+9. Run php artisan migrate
+10. Run php artisan db:seed
+11. Run project.
